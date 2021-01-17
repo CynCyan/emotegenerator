@@ -3,8 +3,6 @@ import os
 
 
 def genEmotes(lb1, lb2, e1, e2, b1):
-    print(e1.get())
-    print(e2.get("1.0", END))
     prefix = ":" + str(e1.get()) + ":"
     message = e2.get("1.0", END)
     newmessage = ""
@@ -29,7 +27,6 @@ def printEmotes(message):
 
 # Main Body
 def main():
-    print(12)
     global LB1, LB2, ENTR1, ENTR2, butto1
     root = Tk()
     root.title("Emote Generator")
