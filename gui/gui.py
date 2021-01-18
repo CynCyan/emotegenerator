@@ -1,24 +1,24 @@
-from tkinter import *
 import os
+from tkinter import *
 
 
 # This function surrounds the imported text with the prefix
 def genEmotes(lb1, lb2, e1, e2, b1):
-    #format the prefix for discord
+    # format the prefix for discord
     prefix = ":" + str(e1.get()) + ":"
     message = e2.get("1.0", END)
     newmessage = ""
-    i=0
+    i = 0
     # wraps the prefix around the message by inserting each letter over #
     for x in message:
-        if str.isalpha(message[i:i+1]):
-            newmessage = newmessage + prefix.replace("#", message[i:i+1]) + " "
-        elif message[i:i+1] == " ":
+        if str.isalpha(message[i:i + 1]):
+            newmessage = newmessage + prefix.replace("#", message[i:i + 1]) + " "
+        elif message[i:i + 1] == " ":
             newmessage = newmessage + "   "
         else:
-            newmessage = newmessage + message[i:i+1]
-        i = i+1
-    #newmessage = newmessage[:(len(newmessage)-len(prefix)-1)]
+            newmessage = newmessage + message[i:i + 1]
+        i = i + 1
+    # newmessage = newmessage[:(len(newmessage)-len(prefix)-1)]
     printEmotes(newmessage)
 
 
@@ -57,7 +57,8 @@ def main():
     ENTR2.insert("1.0", startText)
 
     # final button that generates the emotes
-    butto1 = Button(root, text="Output text", font=('Arial', 20), command=lambda: genEmotes(LB1, LB2, ENTR1, ENTR2, butto1))
+    butto1 = Button(root, text="Output text", font=('Arial', 20),
+                    command=lambda: genEmotes(LB1, LB2, ENTR1, ENTR2, butto1))
 
     # all elements packed into gui grid
     LB1.grid(row=1, column=0, columnspan=3)
